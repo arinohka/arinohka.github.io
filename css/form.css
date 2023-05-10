@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+body {
+     margin: 0;
+     font-family: 'Inter', sans-serif;
+     font-size: 15px;
+     line-height: 1.6;
+ }
+#register{
+    width: 600px;
+    height: 549px;
+    border-radius: 20px;
+    text-align: center;
+    padding: 15px;
+    border: 3px solid #0000cc;
+    /*border-radius: 10px;*/
+    color: #0000cc;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background: #ffff;
+}
+#register:target {display: block;}
+.close {
+    display: inline-block;
+    border: 1px solid #0000cc;
+    color: #0000cc;
+    padding: 0 12px;
+    margin: 10px;
+    text-decoration: none;
+    background: #f2f2f2;
+    font-size: 14pt;
+    cursor:pointer;
+}
+#black {
+    background: rgba(102, 102, 102, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+#black:target {display: block;}
+.close {
+    display: inline-block;
+    border: 1px solid #0000cc;
+    color: #0000cc;
+    padding: 0 12px;
+    margin: 10px;
+    text-decoration: none;
+    background: #f2f2f2;
+    font-size: 14pt;
+    cursor:pointer;
+}
+/*.form__background {*/
+/*    position: fixed;*/
+/*    left: 0;*/
+/*    top: 0;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    background: black;*/
+/*    opacity: 0.7;*/
+/*}*/
+.okno{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 40px 80px;
+    margin-bottom: 30px;
+    font-size: 32px;
+    text-decoration: none;
+}
+.reg{
+    color:black;
+    text-decoration: none;
+    /*text-transform: uppercase;*/
+    position: relative;
+
+}
+.reg:after{
+    color: #898989;
+    content: '';
+    position: absolute;
+    opacity: 0;
+}
+.reg.activ:after {
+    opacity: 1;
+}
+.registration-inputs__container {
+    display: grid;
+    grid-template-columns: repeat(2, 250px);
+    grid-template-rows: repeat(3, 60px);
+    row-gap: 20px;
+    column-gap: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 30px;
+    max-width: 520px;
+}
+.input__label__big {
+    width: 520px;
+}
+.input__label {
+    position: absolute;
+    cursor: text;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 60px;
+}
+.input__label {
+    position: absolute;
+    cursor: text;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 60px;
+}
+.form__placeholder {
+    transition-duration: 0.5s;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    user-select: none;
+    width: 480px;
+    height: 20px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(185, 185, 185, 1);
+}
+input {
+    writing-mode: horizontal-tb !important;
+    font-style: ;
+    font-variant-ligatures: ;
+    font-variant-caps: ;
+    font-variant-numeric: ;
+    font-variant-east-asian: ;
+    font-weight: ;
+    font-stretch: ;
+    font-size: ;
+    font-family: ;
+    text-rendering: auto;
+    color: grey;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    background-color: white;
+    margin: 0em;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+.registration__pass{
+    display: flex;
+}
+.registration__name {
+    position: relative;
+    grid-column: span 2;
+    border: 2px solid #A6C81E;
+    border-radius: 10px;
+}
+
+.registration__email {
+    position: relative;
+    border: 2px solid #A6C81E;
+    border-radius: 10px;
+}
+.registration__phone {
+    position: relative;
+    border: 2px solid #A6C81E;
+    border-radius: 10px;
+}
+.registration__pass {
+    position: relative;
+    border: 2px solid #A6C81E;
+    border-radius: 10px;
+}
+.registration__pass-check {
+    position: relative;
+    border: 2px solid #A6C81E;
+    border-radius: 10px;
+}
+/*.agree {*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    justify-content: flex-start;*/
+/*    margin: 0 100px;*/
+/*    margin-bottom: 20px;*/
+/*}*/

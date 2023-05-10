@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable-no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Студенческий файлообменник</title>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/registr.css.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/style2.css">
+
+</head>
+<body>
+<?php
+$connection=mysqli_connect('localhost', 'root', '', 'test')
+?>
+
+<header class="header">
+    <div class="container">
+
+
+        <div class="form">
+            <div class="form__background">
+            </div>
+            <div class="form__window">
+                <div  class="back">
+                    <button img src="close.svg"class="close-button"><svg width="20" height="20"   xmlns="img/close.svg">
+                        <path d="M4 4L16 16" stroke="#B9B9B9" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M16 4L4 16" stroke="#B9B9B9" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    </button>
+                </div>
+
+
+
+                <div class="form__window__change-mode">
+                    <button class="change-mode__button change-mode__button__registration change-mode__button__active">
+                        Регистрация
+                    </button>
+                    <button class="change-mode__button change-mode__button__autorization change-mode__button__unactive">
+                        Авторизация
+                    </button>
+                </div>
+
+                <div class="registration__form">
+                    <form action="admin/check.php" method="post">
+                        <div class="registration-inputs__container">
+                            <div class="registration__name">
+                                <label class="input__label input__label__big">
+                                    <input input type="text" name="name" class="form__input registration__form__input form__input__big registration__name__input">
+                                    <p class="form__placeholder registration__placeholder">
+                                        Ваше имя
+                                    </p>
+                                </label>
+                            </div>
+
+                            <div class="registration__email">
+                                <label class="input__label">
+                                    <input input type="text" name="email" class="form__input registration__form__input registration__email__input">
+                                    <p class="form__placeholder registration__placeholder">
+                                        Email
+                                    </p>
+                                </label>
+                            </div>
+
+                            <div class="registration__phone">
+                                <label class="input__label">
+                                    <input type="text" class="form__input registration__form__input registration__phone__input">
+                                    <p class="form__placeholder registration__placeholder">
+                                        Мобильный телефон
+                                    </p>
+                                </label>
+                            </div>
+
+                            <div class="registration__pass">
+                                <label class="input__label">
+                                    <input type="password" name="password" class="form__input registration__form__input registration__pass__input">
+                                    <p class="form__placeholder registration__placeholder">
+                                        Пароль
+                                    </p>
+                                </label>
+                            </div>
+
+                            <div class="registration__pass-check">
+                                <label class="input__label">
+                                    <input type="password" name="password1"  class="form__input registration__form__input registration__pass-check__input">
+                                    <p class="form__placeholder registration__placeholder">
+                                        Повторите пароль
+                                    </p>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="agree">
+                            <label class="agree__checkbox__label">
+                                <input type="checkbox" class="agree__checkbox">
+                                <div class="agree__checkbox__background"></div>
+                            </label>
+                            <p class="agree__text">
+                                Согласен на обработку
+                                <a class="agree__link">персональных данных</a>
+                            </p>
+                        </div>
+
+                        <button disabled class="registration__submit submit__unactive">
+                            <p class="submit__text">
+                                Зарегистрироваться
+                            </p>
+                        </button>
+
+                        <div class="registration__info">
+                            <div class="registration__info__icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="10" cy="10" r="7" stroke="#838383" stroke-width="2"/>
+                                <rect x="9" y="6" width="2" height="5" rx="1" fill="#838383"/>
+                                <rect x="9" y="12" width="2" height="2" rx="1" fill="#838383"/>
+                            </svg></div>
+
+                            <p class="registration__info__text">
+                                Все поля обязательны для заполнения
+                            </p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="login__form">
+                    <form action="admin/admin.php" method="post">
+                        <div class="login-inputs__container">
+                            <div class="login__email">
+                                <label class="input__label">
+                                    <input type="text" name="email" class="form__input login__form__input login__email__input">
+                                    <p class="form__placeholder login__placeholder">
+                                        Email
+                                    </p>
+                                </label>
+                            </div>
+
+                            <div class="login__pass">
+                                <label class="input__label">
+                                    <input type="password" name="password" class="form__input login__form__input login__pass__input">
+                                    <p class="form__placeholder login__placeholder">
+                                        Пароль
+                                    </p>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button disabled class="login__submit submit__unactive">
+                            <p class="submit__text">
+                                Войти
+                            </p>
+                        </button>
+
+                        <div class="registration__info">
+                            <div class="registration__info__icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="10" cy="10" r="7" stroke="#838383" stroke-width="2"/>
+                                <rect x="9" y="6" width="2" height="5" rx="1" fill="#838383"/>
+                                <rect x="9" y="12" width="2" height="2" rx="1" fill="#838383"/>
+                            </svg></div>
+                            <p class="registration__info__text">
+                                Все поля обязательны для заполнения
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="header_wrapper">
+            <div class="header__block">
+                <a href="/" class="header__logo">
+                    <img src="img/logo.png" alt="">
+                </a>
+                <a href="/" class="header__logo__mini">
+                    <img src="img/logi mini.png" alt="">
+                </a>
+
+            <nav class="nav">
+            </div>
+                <button class="header__button header__button__registration">Регистрация</button>
+                <button class="header__button header__button__login">Вход</button>
+            </nav>
+        </div>
+        <img class="cherta" src="img/черта.png" alt="">
+    </div>
+</header>
+<section class="intro">
+    <div class="container">
+        <div class="intro__content">
+            <h1 class="intro_title">Учебные материал</h1>
+            <div href="#" class="btn">
+                <img src="img/+.svg">
+                <a class="sv">Добавить пост</a>
+
+                <p href="#" class="btn__mini">+</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="info">
+    <div class="container">
+        <div class="card__wrapper">
+<!--            <div class="card__block">-->
+                <div class="card__item">
+                    <p class="card__date__mini">  <img class="vr" src="img/время.png" alt=""> 15.08</p>
+                    <p class="card__date">Добавление 15 августа</p>
+                    <p class="card__title">Расписание занятий</p>
+                    <a href="#" class="card__button">Подробнее</a>
+                </div>
+
+
+<!--            </div>-->
+<!--            <div class="card__block">-->
+                <div class="card__item">
+                    <p class="card__date__mini"><img class="vr" src="img/время.png" alt=""> 12.08</p>
+                    <p class="card__date">Добавление 12 августа</p>
+                    <p class="card__title">Прикреплённые файлы</p>
+                    <a href="#" class="card__button">Подробнее</a>
+                </div>
+<!--            </div>-->
+<!--            <div class="card__block">-->
+                <div class="card__item">
+                    <p class="card__date__mini"><img class="vr" src="img/время.png" alt=""> 11.08</p>
+                    <p class="card__date">Добавление 11 августа</p>
+                    <p class="card__title">Лабораторная работа #5</p>
+                    <a href="#" class="card__button">Подробнее</a>
+                </div>
+<!--            </div>-->
+<!--            <div class="card__block">-->
+                <div class="card__item">
+                    <p class="card__date__mini"><img class="vr" src="img/время.png" alt="">  09.08</p>
+                    <p class="card__date">Добавление 9 августа</p>
+                    <p class="card__title">Студенческая весна. Фото и...</p>
+                    <a href="#" class="card__button">Подробнее</a>
+                </div>
+<!--            </div>-->
+<!--            <div class="card__block">-->
+                <div class="card__item">
+                    <p class="card__date__mini"><img class="vr" src="img/время.png" alt="">  05.08</p>
+                    <p class="card__date">Добавление 5 августа</p>
+                    <p class="card__title">Списки на отчисление</p>
+                    <a href="#" class="card__button">Подробнее</a>
+                </div>
+<!--            </div>-->
+
+<!--            <div class="card__block">-->
+                <div class="card__item">
+                    <p class="card__date__mini"><img class="vr" src="img/время.png" alt="">  05.08</p>
+                    <p class="card__date">Добавление 5 августа</p>
+                    <p class="card__title">Списки на отчисление</p>
+                    <a href="#" class="card__button">Подробнее</a>
+                </div>
+<!--            </div>-->
+<!--            <div class="card__block">-->
+                <div class="card__item">
+                    <p class="card__date__mini"><img class="vr" src="img/время.png" alt="">  12.08</p>
+                    <p class="card__date">Добавление 12 августа</p>
+                    <p class="card__title">Прикреплённые файлы</p>
+                    <a href="#" class="card__button">Подробнее</a>
+                </div>
+<!--            </div>-->
+<!--            <div class="card__block">-->
+                <div class="card__item">
+                    <p class="card__date__mini"><img class="vr" src="img/время.png" alt="">  15.08</p>
+                    <p class="card__date">Добавление 15 августа</p>
+                    <p class="card__title">Расписание занятий</p>
+                    <a href="#" class="card__button">Подробнее</a>
+                </div>
+<!--            </div>-->
+<!--            <div class="card__block">-->
+                <div class="card__item">
+                    <p class="card__date__mini"><img class="vr" src="img/время.png" alt="">  09.08</p>
+                    <p class="card__date">Добавление 9 августа</p>
+                    <p class="card__title">Студенческая весна. Фото и...</p>
+                    <a href="#" class="card__button">Подробнее</a>
+                </div>
+<!--            </div>-->
+<!--            <div class="card__block">-->
+                <div class="card__item">
+                    <p class="card__date__mini"><img class="vr" src="img/время.png" alt="">  11.08</p>
+                    <p class="card__date">Добавление 11 августа</p>
+                    <p class="card__title">Лабораторная работа #5</p>
+                    <a href="#" class="card__button">Подробнее</a>
+                </div>
+<!--            </div>-->
+
+<!--            <div class="card__block">-->
+                <div class="card__item">
+                    <p class="card__date__mini"><img class="vr" src="img/время.png" alt="">  15.08</p>
+                    <p class="card__date">Добавление 15 августа</p>
+                    <p class="card__title">Расписание занятий</p>
+                    <a href="#" class="card__button">Подробнее</a>
+                </div>
+<!--            </div>-->
+<!--            <div class="card__block">-->
+                <div class="card__item">
+                    <p class="card__date__mini"><img class="vr" src="img/время.png" alt="">  11.08</p>
+                    <p class="card__date">Добавление 11 августа</p>
+                    <p class="card__title">Лабораторная работа #5</p>
+                    <a href="#" class="card__button">Подробнее</a>
+                </div>
+<!--            </div>-->
+<!--            <div class="card__block">-->
+                <div class="card__item">
+                    <p class="card__date__mini"><img class="vr" src="img/время.png" alt="">  12.08</p>
+                    <p class="card__date">Добавление 12 августа</p>
+                    <p class="card__title">Прикреплённые файлы</p>
+                    <a href="#" class="card__button">Подробнее</a>
+                </div>
+<!--            </div>-->
+<!--            <div class="card__block">-->
+                <div class="card__item">
+                    <p class="card__date__mini"><img class="vr" src="img/время.png" alt="">  09.08</p>
+                    <p class="card__date">Добавление 9 августа</p>
+                    <p class="card__title">Студенческая весна. Фото и...</p>
+                    <a href="#" class="card__button">Подробнее</a>
+                </div>
+<!--            </div>-->
+<!--            <div class="card__block">-->
+                <div class="card__item">
+                    <p class="card__date__mini"><img class="vr" src="img/время.png" alt="">  05.08</p>
+                    <p class="card__date">Добавление 5 августа</p>
+                    <p class="card__title">Списки на отчисление</p>
+                    <a href="#" class="card__button">Подробнее</a>
+                </div>
+<!--            </div>-->
+        </div>
+        <div class="kard">
+            <img src="img/Vector%201.png" alt="">
+            <a href="#" class="bttn">Показать ещё</a>
+        </div>
+    </div>
+</section>
+<section class="container">
+    <img class="cherta" src="img/черта.png" alt="">
+    <div class="end">
+        <a href="#" class="tx1">info@gmail.com</a>
+        <a href="#" class="tx2">Информация о разработчике</a>
+    </div>
+</section>
+</body>
+</html>
